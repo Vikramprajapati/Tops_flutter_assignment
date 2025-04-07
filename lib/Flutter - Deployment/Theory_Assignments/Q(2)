@@ -1,0 +1,17 @@
+2. Steps to Generate App Bundles and APKs (Flutter)
+Run these commands in the terminal from your project root:
+
+To generate APK:
+flutter build apk --release
+
+To generate App Bundle (recommended for Play Store):
+flutter build appbundle --release
+
+These generate files in the build/app/outputs/flutter-apk/ or build/app/outputs/bundle/ folders.
+
+For iOS:
+
+To build for release (on macOS):
+flutter build ios --release
+
+Then open the .xcworkspace in Xcode → Archive → Distribute App.

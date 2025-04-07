@@ -28,6 +28,7 @@ class FoodList extends StatelessWidget {
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
                     color: selected == index ? Colors.orange : Colors.white),
+
                 child: Text(
                   category[index],
                   style: TextStyle(fontWeight: FontWeight.bold),

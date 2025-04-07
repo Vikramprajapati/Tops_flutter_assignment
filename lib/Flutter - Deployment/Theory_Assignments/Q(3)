@@ -1,0 +1,32 @@
+3. Best Practices for Submitting Apps to App Stores
+
+(A) For Both Platforms:
+Ensure your app is fully tested (especially on real devices).
+
+Follow store guidelines (Apple's HIG and Google’s Material Guidelines).
+
+Provide clear app metadata (screenshots, descriptions, etc.).
+
+Include a Privacy Policy if your app collects user data.
+
+Use versioning and changelogs properly.
+
+Handle permissions carefully (ask only what’s needed).
+
+Optimize performance and size.
+
+Localize your app if targeting multiple regions.
+
+(B) Specific to Android:
+Use Android App Bundles (AAB) for smaller install sizes.
+
+Support multiple screen sizes and densities.
+
+Add a feature graphic for better Play Store visibility.
+
+(C) Specific to iOS:
+Test using TestFlight before submission.
+
+Adhere strictly to Apple’s guidelines to avoid rejection.
+
+Provide accurate App Store privacy details.

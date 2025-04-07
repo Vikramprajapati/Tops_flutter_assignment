@@ -9,11 +9,10 @@ class Foodlistview extends StatelessWidget {
   final PageController pageController;
   final Restaurant restaurant;
 
-  Foodlistview(
-      {required this.selected,
-      required this.callback,
-      required this.pageController,
-      required this.restaurant});
+  Foodlistview({required this.selected,
+    required this.callback,
+    required this.pageController,
+    required this.restaurant});
 
   @override
   Widget build(BuildContext context) {
@@ -24,19 +23,25 @@ class Foodlistview extends StatelessWidget {
         controller: pageController,
         onPageChanged: (index) => callback(index),
         children: category
-            .map((e) => ListView.separated(
-                  itemBuilder: (context, index) =>
-                      GestureDetector(
-                        onTap: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => Screen2(restaurant.menu[category[selected]]![index]),));
-                        },
-                      child: FoodItem(restaurant.menu[category[selected]]![index])
-                      ),
-                  separatorBuilder: (context, index) => SizedBox(
+            .map((e) =>
+            ListView.separated(
+              itemBuilder: (context, index) =>
+                  GestureDetector(
+                      onTap: () {
+                        Navigator.push(context, MaterialPageRoute(
+                          builder: (context) =>
+                              Screen2(restaurant
+                                  .menu[category[selected]]![index]),));
+                      },
+                      child: FoodItem(
+                          restaurant.menu[category[selected]]![index])
+                  ),
+              separatorBuilder: (context, index) =>
+                  SizedBox(
                     height: 15,
                   ),
-                  itemCount: restaurant.menu[category[selected]]!.length,
-                ))
+              itemCount: restaurant.menu[category[selected]]!.length,
+            ))
             .toList(),
       ),
     );
