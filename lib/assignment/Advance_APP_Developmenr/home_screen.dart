@@ -14,6 +14,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   List<dynamic> posts = [];
+  bool _isLoading = true;
 
   fetchData() async {
     String uri = "https://jsonplaceholder.typicode.com/posts";
@@ -22,6 +23,7 @@ class _HomeScreenState extends State<HomeScreen> {
       var data = jsonDecode(response.body);
       setState(() {
         posts = data;
+        _isLoading=false;
       });
     } catch (e) {
       throw Exception(e.toString());
@@ -38,7 +40,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("Home PAge"),
+          title: Text("API DATA"),
           actions: [
             IconButton(
                 onPressed: () async {
@@ -55,7 +57,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 icon: Icon(Icons.logout))
           ],
         ),
-        body: ListView.builder(
+        body: _isLoading?Center(child: CircularProgressIndicator(),):ListView.builder(
           itemCount: posts.length,
           itemBuilder: (context, index) {
             return Card(

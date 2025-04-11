@@ -23,8 +23,8 @@ class MyApp extends StatelessWidget {
        // home: FirebaseAuth.instance.currentUser != null
          //   ? HomeScreen()
          //   : LoginPage()
-         //home: SplashScreen(),
-      home: HomeScreen(),
+         home: SplashScreen(),
+
         );
   }
 }
