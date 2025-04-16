@@ -1,0 +1,1 @@
+In Dart, you cannot override static methods. Static methods belong to the class itself rather than to instances of the class. Because of this, static methods are not associated with instances of the class and do not participate in polymorphism.

@@ -1,0 +1,1 @@
+In Dart, private methods are denoted by a leading underscore (_) in their names. A private method is accessible only within the file in which it is defined. Because of this encapsulation, you cannot override a private method in a subclass if that method is defined in a different file.

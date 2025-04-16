@@ -1,0 +1,4 @@
+In Dart, you can restrict a member of a class from being inherited by its subclasses by using the private keyword. Dart does not support explicit keywords like protected or private for visibility control directly on class members. Instead, Dart uses a naming convention to indicate private members.
+
+Making Members Private in Dart:
+In Dart, a member (method or field) is made private by prefixing its name with an underscore (_). Private members are only accessible within the file (library) where they are defined. This means that private members are not accessible by subclasses in other files.

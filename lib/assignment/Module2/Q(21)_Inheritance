@@ -1,0 +1,16 @@
+Inheritance is a fundamental concept in object-oriented programming (OOP) that allows one class (called a subclass or derived class) to inherit properties and behaviors (methods) from another class (called a superclass or base class). This concept promotes code reuse and establishes a natural hierarchy between classes.
+
+Key Concepts of Inheritance:
+Superclass (Base Class): The class from which properties and methods are inherited. It represents a general concept.
+
+Subclass (Derived Class): The class that inherits from the superclass. It can extend or modify the behavior of the superclass. It represents a more specialized concept.
+
+Inheritance Types:
+
+Single Inheritance: A subclass inherits from one superclass. This is the simplest form of inheritance.
+Multiple Inheritance: A subclass inherits from more than one superclass. Some languages (like C++) support this directly, while others (like Java and Dart) do not but use interfaces or mixins to achieve similar functionality.
+Hierarchical Inheritance: Multiple subclasses inherit from a single superclass. This creates a hierarchy where one class serves as a base for multiple derived classes.
+Multilevel Inheritance: A subclass inherits from another subclass, creating a chain of inheritance.
+Method Overriding: A subclass can provide a specific implementation for a method that is already defined in its superclass. This allows the subclass to modify or extend the behavior of the inherited method.
+
+Access to Superclass Members: A subclass can access public and protected members (fields and methods) of its superclass. Private members of the superclass are not accessible to subclasses.

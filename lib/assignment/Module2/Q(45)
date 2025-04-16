@@ -1,0 +1,16 @@
+Inheritance:
+
+Object-Oriented: Supports class-based inheritance, allowing new classes to inherit and extend the functionality of existing ones.
+Object-Based: Typically does not support inheritance or supports it in a limited form (e.g., prototype-based inheritance in JavaScript).
+Polymorphism:
+
+Object-Oriented: Supports polymorphism through method overriding and dynamic method dispatch.
+Object-Based: Often lacks full polymorphism capabilities.
+Abstraction:
+
+Object-Oriented: Provides full abstraction mechanisms by hiding implementation details and exposing only necessary parts.
+Object-Based: Supports abstraction to some extent but may lack advanced features provided by fully object-oriented languages.
+Encapsulation:
+
+Object-Oriented: Full support for encapsulation by bundling data and methods within classes and providing access control.
+Object-Based: Supports encapsulation but without the full set of OOP features like inheritance.

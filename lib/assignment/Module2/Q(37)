@@ -1,0 +1,3 @@
+In dart extends must be used before the implements.
+
+Order: 1. extends 2. implements

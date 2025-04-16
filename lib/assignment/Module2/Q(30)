@@ -1,0 +1,6 @@
+Yes, you can pass an object of a subclass to a method that expects an object of its superclass. This is a fundamental concept of polymorphism in object-oriented programming.
+
+Explanation
+In Dart (and other object-oriented languages), a subclass is a specialized version of its superclass. This means that an object of a subclass is also considered to be an instance of the superclass. As a result, methods that accept objects of the superclass can also accept objects of any subclass.
+
+This is useful for achieving polymorphism, where a single method or function can operate on objects of different types, as long as they are related by inheritance.

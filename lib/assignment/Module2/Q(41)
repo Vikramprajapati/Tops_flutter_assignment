@@ -1,0 +1,1 @@
+In Dart, if a class implements two interfaces that both declare fields (variables) with the same name, it will lead to a compile-time error. This is because Dart does not allow ambiguity in variable names in the implementing class.

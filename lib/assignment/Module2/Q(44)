@@ -1,0 +1,6 @@
+In Dart (and most object-oriented languages), a superclass cannot directly access members of its subclasses. This is due to the fundamental principle of inheritance and encapsulation in object-oriented design. Here’s a breakdown of why this is the case and how it works:
+
+Understanding Superclass and Subclass Access
+Encapsulation Principle: A superclass is designed to be general and not to depend on the specifics of any subclass. Allowing a superclass to access subclass members would break this principle because the superclass would have to be aware of the specifics of its subclasses.
+
+Inheritance Hierarchy: Inheritance means that a subclass inherits the properties and methods of its superclass. The superclass does not have knowledge of or direct access to the additional members introduced by the subclass.

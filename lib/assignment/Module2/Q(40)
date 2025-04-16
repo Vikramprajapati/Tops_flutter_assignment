@@ -1,0 +1,13 @@
+
+      Method Overloading                                                                                                                         Method Overriding
+
+
+1. Method overloading is a compile-time polymorphism.                   	                                                   1.  Method overriding is a run-time polymorphism.
+2. Method overloading helps to increase the readability of the program.	                                                   2. Method overriding is used to grant the specific implementation of the method which is already provided by its parent class or superclass.
+3. It occurs within the class.	                                                                                               3. It is performed in two classes with inheritance relationships.
+4. Method overloading may or may not require inheritance.	                                                                  4. Method overriding always needs inheritance.
+5. In method overloading, methods must have the same name and different signatures.                                          5. In method overriding, methods must have the same name and same signature.
+6. In method overloading, the return type can or can not be the same, but we just have to change the parameter.	          6. In method overriding, the return type must be the same or co-variant.
+7. Static binding is being used for overloaded methods.	                                                                  7. Dynamic binding is being used for overriding methods.
+8. Private and final methods can be overloaded.	                                                                          8. Private and final methods can’t be overridden.
+9. The argument list should be different while doing method overloading.	                                                  9. The argument list should be the same in method overriding.

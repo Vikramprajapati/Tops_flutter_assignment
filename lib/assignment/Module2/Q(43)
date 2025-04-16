@@ -1,0 +1,9 @@
+In Dart, a static method in a subclass does not hide an instance method in the superclass. Static methods and instance methods are distinct and belong to different contexts. Here's a detailed explanation:
+
+Static Methods vs. Instance Methods
+Static Methods: Static methods belong to the class itself, not to any instance of the class. They are accessed using the class name and cannot access instance-specific data.
+
+Instance Methods: Instance methods belong to an instance of the class and can access both instance variables and other instance methods.
+
+Hiding Static Methods
+When you define a static method in a subclass with the same name as a static method in the superclass, it hides the superclass's static method. However, this does not affect instance methods with the same name in the superclass. Static method hiding does not override or interfere with instance methods; they remain separate.

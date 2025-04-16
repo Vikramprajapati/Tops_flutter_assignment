@@ -1,0 +1,31 @@
+1. Inheritance vs. Encapsulation
+Key Differences:
+Purpose:
+
+Inheritance: Focuses on code reuse and establishing a hierarchical relationship between classes.
+Encapsulation: Focuses on protecting the internal state of an object and controlling access to it.
+Mechanism:
+
+Inheritance: Achieved through class hierarchies (using keywords like extends in Dart).
+Encapsulation: Achieved by using access modifiers (public, private) and getter/setter methods to control access to class attributes.
+Visibility:
+
+Inheritance: Allows a subclass to access public and protected members of the superclass.
+Encapsulation: Hides the internal state of an object from the outside world and provides controlled access.
+
+
+2. Inheritance vs. Abstraction
+
+Key Differences
+Purpose:
+
+Inheritance: Focuses on code reuse and extending existing classes.
+Abstraction: Focuses on hiding implementation details and defining common interfaces.
+Mechanism:
+
+Inheritance: Achieved through class hierarchies (using extends).
+Abstraction: Achieved through abstract classes or interfaces (using abstract keyword in Dart).
+Visibility:
+
+Inheritance: Deals with visibility and accessibility of members between superclass and subclass.
+Abstraction: Deals with hiding the details of implementation and providing a common interface for different classes.

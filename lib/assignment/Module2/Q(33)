@@ -1,0 +1,16 @@
+How Dart Implements Multiple Inheritance: Mixins
+In Dart, multiple inheritance is simulated using mixins. A mixin is a way to reuse code across multiple classes without forming a complex class hierarchy. Mixins allow you to add methods and properties to a class from other classes or mixins.
+
+Key Concepts
+Single Inheritance: A Dart class can extend only one superclass.
+Mixins: Dart allows a class to use multiple mixins. Mixins can be thought of as classes that are intended to be mixed into other classes.
+Defining and Using Mixins
+Here’s how you can define and use mixins in Dart:
+
+1. Define a Mixin
+
+A mixin is defined using the mixin keyword. It can contain methods and properties but cannot have constructors.
+
+2. Use Mixins in a Class
+
+You can apply multiple mixins to a class using the with keyword. The class can then use the methods and properties provided by these mixins.

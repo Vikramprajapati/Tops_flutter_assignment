@@ -1,0 +1,1 @@
+Yes, in Dart, an interface can extend more than one interface. This allows you to create a new interface that combines the features of multiple interfaces.

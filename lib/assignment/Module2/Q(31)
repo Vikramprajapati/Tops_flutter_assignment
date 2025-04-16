@@ -1,0 +1,12 @@
+Fields with the Same Identifier in Parent and Child Classes
+When a parent and a child class have fields with the same identifier, the behavior is as follows:
+
+Field Hiding
+In Dart, if a subclass defines a field with the same name as a field in its superclass, the subclass field hides the superclass field. This means that when you access the field using an instance of the subclass, you will access the subclass's version of the field. The superclass's field is not directly accessible via the subclass instance.
+
+Constructors and Initializers in Inheritance
+Constructors
+In Dart, constructors are not inherited. Each class must define its own constructors. However, a subclass can call a constructor of its superclass using the super keyword. This is often done to initialize the inherited properties of the superclass.
+
+nitializers
+Similarly, initializers are not inherited. Each class manages its own initialization. However, a subclass can initialize its own fields and also ensure that the superclass fields are properly initialized using the superclass's constructor.

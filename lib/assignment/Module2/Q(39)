@@ -1,0 +1,11 @@
+Rules of Method Overriding in Dart:
+
+1. Same Method Signature: The overriding method must have the same name and parameter list (signature) as the method in the superclass.
+
+2. Access Level: The overriding method cannot have a more restrictive access level than the method being overridden. For instance, if the superclass method is public, the overriding method must also be public or protected.
+
+3. Return Type: The return type of the overriding method must be the same as or a subtype of the return type of the overridden method (this is known as covariant return types).
+
+4. Use of @override Annotation: It is a good practice to use the @override annotation when overriding a method. This helps to catch errors at compile time if the method does not correctly match the method in the superclass.
+
+5. Single Inheritance: Dart supports single inheritance, meaning a class can only inherit from one superclass, but it can implement multiple interfaces.

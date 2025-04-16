@@ -1,0 +1,15 @@
+Inheritance vs. Polymorphism
+
+Key Differences
+Purpose:
+
+Inheritance: Focuses on code reuse and creating a hierarchical relationship between classes. It allows a new class to be derived from an existing class.
+Polymorphism: Focuses on flexibility and allowing objects of different classes to be treated as instances of a common superclass. It enables method calls to be resolved at runtime based on the object type.
+Mechanism:
+
+Inheritance: Achieved through extending classes and defining class hierarchies. Methods and properties are inherited from a superclass.
+Polymorphism: Achieved through method overriding (or method overloading in some languages) and dynamic method dispatch. It allows methods to be called on objects of different types using a common interface.
+Code Example:
+
+Inheritance: Demonstrates how a subclass inherits and extends the functionality of a superclass.
+Polymorphism: Demonstrates how methods can have different implementations based on the actual type of object, even when using a common method name.

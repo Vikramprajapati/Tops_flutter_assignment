@@ -1,0 +1,1 @@
+In Dart, if you want to prevent a method from being overridden but don't want to use the final modifier, you can use the @protected annotation along with a private method. However, note that @protected does not strictly prevent overriding; it is more of a design guideline. The most effective way to prevent overriding is to make the method private.

@@ -1,0 +1,9 @@
+When to Override:
+
+. Inheritance: You use overriding when you want to change the behavior of a method in a subclass that is already defined in its superclass.
+. Polymorphism: It allows for polymorphism, where a subclass can provide a specific implementation of a method that is already defined in its superclass.
+
+When to Overload:
+
+. Same Method Name, Different Parameters: You overload methods when you want to define multiple methods with the same name but different parameter types or numbers in the same class.
+. Clarity and Convenience: It can improve code clarity by allowing you to use the same method name for related actions, making the API more intuitive.

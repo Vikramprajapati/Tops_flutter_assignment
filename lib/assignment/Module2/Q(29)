@@ -1,0 +1,1 @@
+If a class implements two interfaces in Dart that both have a method with the same name and signature, the implementing class only needs to provide one implementation of that method. Since the method signatures are identical, there’s no ambiguity for the Dart compiler.
