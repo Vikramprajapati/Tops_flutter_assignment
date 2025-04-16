@@ -12,7 +12,7 @@ plugins {
 
 android {
     namespace = "com.example.tops_flutter_assignment"
-    compileSdk = flutter.compileSdkVersion
+    compileSdk = 35
     ndkVersion = flutter.ndkVersion
 
     compileOptions {
