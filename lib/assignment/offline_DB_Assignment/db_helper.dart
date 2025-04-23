@@ -1,4 +1,3 @@
-
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:tops_flutter_assignment/assignment/offline_DB_Assignment/model.dart';
@@ -24,6 +23,8 @@ class DbHelper {
     }
   }
 
+
+
   Future<Database> openDB() async {
     final databasepath = await getDatabasesPath();
     final path = join(databasepath, "employee.db");
@@ -32,9 +33,8 @@ class DbHelper {
       version: 1,
       onCreate: (db, version) async {
         await db.execute(
-          // CREATE ALL TABLE HERE
+            // CREATE ALL TABLE HERE
             "CREATE TABLE $tablename($idColumn INTEGER PRIMARY KEY AUTOINCREMENT,$nameColumn TEXT ,$designationColumn TEXT)");
-
       },
     );
   }
@@ -67,11 +67,7 @@ class DbHelper {
 
   Future<int> updateEmp(Employee employee) async {
     var db = await getDatabase();
-    return await db.update(
-        tablename,
-        employee.toMap(),
-        where: "$idColumn=?",
-        whereArgs: [employee.id]
-    );
+    return await db.update(tablename, employee.toMap(),
+        where: "$idColumn=?", whereArgs: [employee.id]);
   }
 }

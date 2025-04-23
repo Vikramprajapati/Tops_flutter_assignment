@@ -10,6 +10,7 @@ class Student {
   double? fees;
   String? number;
   int? marks;
+  String? faculty;
 
   Student({
     this.id,
@@ -23,6 +24,7 @@ class Student {
     this.fees,
     this.number,
     this.marks,
+     this.faculty
   });
 
   factory Student.fromMap(Map<String, dynamic> map) {
@@ -38,6 +40,7 @@ class Student {
       fees: map['fees'] != null ? (map['fees'] as num).toDouble() : null,
       number: map['number'],
       marks: map['marks'],
+      faculty: map['faculty'],
     );
   }
 
@@ -54,6 +57,7 @@ class Student {
       'fees': fees,
       'number': number,
       'marks': marks,
+      'faculty':faculty
     };
   }
 }

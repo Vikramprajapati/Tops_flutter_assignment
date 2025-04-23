@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:tops_flutter_assignment/Assessment/Flutter%20-Offline%20Database-%20Sqlite/add_student.dart';
-import 'package:tops_flutter_assignment/Assessment/Flutter%20-Offline%20Database-%20Sqlite/db_helper.dart';
-import 'package:tops_flutter_assignment/Assessment/Flutter%20-Offline%20Database-%20Sqlite/model.dart';
-import 'package:tops_flutter_assignment/Assessment/Flutter%20-Offline%20Database-%20Sqlite/student_detail.dart';
+import 'package:tops_flutter_assignment/Assessment/Flutter%20-Offline%20Database-%20Sqlite/counsellor_panel/model/student_model.dart';
+import 'package:tops_flutter_assignment/Assessment/Flutter%20-Offline%20Database-%20Sqlite/counsellor_panel/screen/add_student.dart';
+import 'package:tops_flutter_assignment/Assessment/Flutter%20-Offline%20Database-%20Sqlite/counsellor_panel/screen/student_detail.dart';
+import 'package:tops_flutter_assignment/Assessment/Flutter%20-Offline%20Database-%20Sqlite/db/db_helper.dart';
 
 class ViewStudents extends StatefulWidget {
-  ViewStudents({Key? key}) : super(key: key);
+  String? faculty_id;
+
+  ViewStudents({Key? key, this.faculty_id}) : super(key: key);
 
   @override
   State<ViewStudents> createState() => ViewStudentsState();
@@ -13,6 +15,7 @@ class ViewStudents extends StatefulWidget {
 
 class ViewStudentsState extends State<ViewStudents> {
   late Future<List<Student>> students;
+  late Future<List<Student>> Mystudents;
   DbHelper dbHelper = DbHelper.instance;
 
   Future<List<Student>> getStudents() async {
@@ -21,15 +24,24 @@ class ViewStudentsState extends State<ViewStudents> {
     return Studentmap.map((e) => Student.fromMap(e)).toList();
   }
 
+  Future<List<Student>> getMyStudents() async {
+    await dbHelper.getDatabase();
+    List<Map<String, Object?>> Studentmap =
+        await dbHelper.getMyStudent(widget.faculty_id!);
+    return Studentmap.map((e) => Student.fromMap(e)).toList();
+  }
+
   @override
   void initState() {
     students = getStudents();
+    Mystudents = getMyStudents();
     super.initState();
   }
 
   void refreshStudents() {
     setState(() {
       students = getStudents();
+      Mystudents = getMyStudents();
     });
   }
 
@@ -40,7 +52,7 @@ class ViewStudentsState extends State<ViewStudents> {
         title: Text("Student Data"),
       ),
       body: FutureBuilder(
-        future: students,
+        future: widget.faculty_id == null ? students : Mystudents,
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return Center(child: CircularProgressIndicator());
@@ -51,16 +63,20 @@ class ViewStudentsState extends State<ViewStudents> {
           List<Student> students = snapshot.data ?? [];
 
           if (students.isEmpty) {
-            return Center(child: Text("No Employee Found"));
+            return Center(child: Text("No Student Found"));
           } else
             return ListView.builder(
               itemCount: students.length,
               itemBuilder: (context, index) => GestureDetector(
                 onTap: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => StudentDetail()));
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => StudentDetail(
+                                student: students[index],
+                              )));
                 },
                 child: Card(
-
                   child: ListTile(
                     leading: CircleAvatar(
                       child: Text("${index + 1}"),

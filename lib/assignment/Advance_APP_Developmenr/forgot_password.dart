@@ -13,7 +13,7 @@ class ForgotPassword extends StatelessWidget {
   void forgotPassword(String email, BuildContext context) async {
     //this code does not check email is exit or not in firebase authentication
     await _auth.sendPasswordResetEmail(email: email).then(
-          (value) {
+      (value) {
         Navigator.pushReplacement(
             context,
             MaterialPageRoute(
@@ -28,11 +28,11 @@ class ForgotPassword extends StatelessWidget {
         );
       },
     ).onError(
-          (error, stackTrace) {
+      (error, stackTrace) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
               content:
-              Text(error.toString(), style: TextStyle(color: Colors.white)),
+                  Text(error.toString(), style: TextStyle(color: Colors.white)),
               backgroundColor: Colors.red),
         );
       },

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:tops_flutter_assignment/Assessment/Flutter%20-Offline%20Database-%20Sqlite/db_helper.dart';
-import 'package:tops_flutter_assignment/Assessment/Flutter%20-Offline%20Database-%20Sqlite/model.dart';
+import 'package:tops_flutter_assignment/Assessment/Flutter%20-Offline%20Database-%20Sqlite/counsellor_panel/model/student_model.dart';
+import 'package:tops_flutter_assignment/Assessment/Flutter%20-Offline%20Database-%20Sqlite/db/db_helper.dart';
 
 class AddStudent extends StatefulWidget {
   Student? student;
@@ -22,6 +22,7 @@ class _AddStudentState extends State<AddStudent> {
   final TextEditingController _contactController = TextEditingController();
   final TextEditingController _feesController = TextEditingController();
   final TextEditingController _marksController = TextEditingController();
+  final TextEditingController _facultyController = TextEditingController();
 
   String? _selectedCourse;
   String? _selectedCity;
@@ -57,8 +58,12 @@ class _AddStudentState extends State<AddStudent> {
     widget.student != null
         ? _marksController.text = widget.student!.marks.toString()
         : "";
+    widget.student != null
+        ? _facultyController.text = widget.student!.faculty.toString()
+        : "";
     widget.student != null ? _selectedCity = widget.student!.city : null;
     widget.student != null ? _selectedCourse = widget.student!.course : null;
+
     super.initState();
   }
 
@@ -71,6 +76,7 @@ class _AddStudentState extends State<AddStudent> {
     var number = _contactController.text.toString();
     var fees = double.tryParse(_feesController.text.toString());
     var marks = int.tryParse(_marksController.text.toString());
+    var faculty = _facultyController.text.toString();
     var course = _selectedCourse;
     var city = _selectedCity;
 
@@ -84,7 +90,8 @@ class _AddStudentState extends State<AddStudent> {
         city: city!,
         fees: fees,
         number: number,
-        marks: marks));
+        marks: marks,
+        faculty: faculty));
     Navigator.pop(context, true);
   }
 
@@ -95,6 +102,7 @@ class _AddStudentState extends State<AddStudent> {
     var address = _addressController.text.toString();
     var pincode = _pincodeController.text.toString();
     var number = _contactController.text.toString();
+    //var faculty = _facultyController.text.toString();
     var fees = double.tryParse(_feesController.text.toString());
     var marks = int.tryParse(_marksController.text.toString());
     var course = _selectedCourse;
@@ -110,7 +118,8 @@ class _AddStudentState extends State<AddStudent> {
         city: city!,
         fees: fees,
         number: number,
-        marks: marks));
+        marks: marks,
+        faculty: _facultyController.text.toString()));
     Navigator.pop(context, true);
   }
 
@@ -276,6 +285,18 @@ class _AddStudentState extends State<AddStudent> {
                   controller: _marksController,
                   decoration: InputDecoration(
                       labelText: 'Marks',
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      )),
+                  keyboardType: TextInputType.number,
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                TextFormField(
+                  controller: _facultyController,
+                  decoration: InputDecoration(
+                      labelText: 'Faculty-Id',
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10),
                       )),
